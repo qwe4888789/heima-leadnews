@@ -1,0 +1,37 @@
+server:
+  port: 6002
+spring:
+  application:
+    name: leadnews-wemedia-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.66.133:8848
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]': # 匹配所有请求
+            allowedOrigins: "*" #跨域处理 允许所有的域
+            allowedMethods: # 支持的方法
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        # 自媒体管理
+        - id: wemedia
+          uri: lb://leadnews-wemedia
+          predicates:
+            - Path=/wemedia/**
+          filters:
+            - StripPrefix= 1
+        # 管理员
+        - id: admin
+          uri: lb://leadnews-admin
+          predicates:
+            - Path=/admin/**
+          filters:
+            - StripPrefix= 1
+leadnews:
+  jwt:
+    publicKeyPath: D:\idea_codes\javaee153\rsa\rsa-key.pub

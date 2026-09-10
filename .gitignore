@@ -1,0 +1,64 @@
+# ===== Java / Maven =====
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.maven/
+mvnw
+mvnw.cmd
+
+# ===== IDE =====
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.classpath
+.project
+.settings/
+.factorypath
+.springBeans
+.sts4-cache/
+.vscode/
+.history/
+
+# ===== 编译产物 =====
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# ===== 日志 =====
+logs/
+*.log
+
+# ===== 操作系统 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 临时文件 =====
+*.tmp
+*.bak
+*.swp
+*~
+
+# ===== 敏感信息（请勿提交）=====
+application-local.yml
+application-local.properties
+*.local.yml
+*.local.properties
+*.pem
+*.key
+rsa-key
+rsa-key.pub
+
+# ===== 容器 =====
+*.pid
+
+# ===== Node =====
+node_modules/
+dist/
